@@ -15,7 +15,6 @@ function App() {
           <Route exact path="/tv/:id" element={<Single />} />
         </Routes>
       </Router>
-     
     </>
   );
 }
