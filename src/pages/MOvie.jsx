@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+
+
+import "./page.css"
 import MovieCard from "../Componenets/MovieCard/MovieCard";
 
 const Movie = () => {
@@ -33,13 +36,12 @@ const Movie = () => {
       });
   }, []);
 
-  console.log(state.data);
   
   return (
-    <div className="grid container mx-auto p-4 grid-cols-5 ">
+    <div className="grid container mx-auto p-4 grid-cols-4 ">
       {state?.data?.map((movie) => (
        
-        <MovieCard key={movie.id} title={movie.title} rating={movie.vote_average}
+        <MovieCard id={movie.id} key={movie.id} title={movie.title} rating={movie.vote_average}
         date={movie.release_date}
         img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
       ))}

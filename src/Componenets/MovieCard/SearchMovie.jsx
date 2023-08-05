@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "../Componenets/MovieCard/MovieCard";
+import MovieCard from "./MovieCard";
+import { useParams } from "react-router-dom";
 
-import "./page.css"
-
-const Home = () => {
+const SearchMovie = () => {
+  const { id } = useParams();
   const [state, setState] = useState({
     isFetched: false,
     data: [],
@@ -13,9 +13,10 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.themoviedb.org/3/movie/top_rated", {
+      .get(`https://api.themoviedb.org/3/search/movie`, {
         params: {
           api_key: "aaf4d16e6e17ea1911d45cb7465786d1",
+          query: id,
         },
       })
       .then((res) => res.data)
@@ -33,19 +34,23 @@ const Home = () => {
           error: err,
         });
       });
-  }, []);
+  }, [id]);
 
-  
   return (
     <div className="grid container mx-auto p-4 grid-cols-4 ">
       {state?.data?.map((movie) => (
-       
-        <MovieCard id={movie.id} key={movie.id} title={movie.title} rating={movie.vote_average}
-        date={movie.release_date}
-        img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
+        <MovieCard
+          id={movie.id}
+          key={movie.id}
+          title={movie.title}
+          rating={movie.vote_average}
+          date={movie.release_date}
+          img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
+        />
       ))}
     </div>
   );
-}
+};
 
-export default Home;
+export default SearchMovie;
+

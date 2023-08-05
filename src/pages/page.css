@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
+
+@keyframes spin {
+      to {
+            transform: rotate(360deg);
+      }
+}
+
+
+.loader {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #1a202c;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+      margin-left: 570px;
+      margin-top: 250px;
+}
+h1,span{
+      font-family: 'Oswald', sans-serif;
+}
