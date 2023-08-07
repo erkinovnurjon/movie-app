@@ -1,6 +1,6 @@
 import Home from "./Home";
 import Movie from "./Movie";
-import Single from "./Single";
+import Single from "./People";
 import SingleMovie from "./SingleMovie";
 import Tv from "./Tv";
 

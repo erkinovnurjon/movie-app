@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap');
-
 @keyframes spin {
       to {
             transform: rotate(360deg);
@@ -18,6 +16,4 @@
       margin-left: 570px;
       margin-top: 250px;
 }
-h1,span{
-      font-family: 'Oswald', sans-serif;
-}
+

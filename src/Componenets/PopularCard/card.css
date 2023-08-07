@@ -1,0 +1,14 @@
+/* page.css */
+.trending-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow-y: auto;
+      max-height: 4600px;
+      /* Yonma-yon qilingan ekran o'lchami */
+}
+
+.trending-cards {
+      display: flex;
+      flex-direction: row;
+}
