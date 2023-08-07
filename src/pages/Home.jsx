@@ -6,6 +6,8 @@ import "./page.css"
 
 import Card from "../Componenets/PopularCard/Card";
 import HomeCard from "../Componenets/HomeCard/HomeCard";
+import TvCard from "../Componenets/TvCard/TvCard";
+import RatedCard from "../Componenets/TopRatedCard/RatedCard";
 
 
 const Home = () => {
@@ -47,12 +49,18 @@ const Home = () => {
           <HomeCard />
         </div>
         <div>
+          <RatedCard />
+        </div>
+        <div>
           <Card />
           
         </div>
+        <div>
+          <TvCard />
+        </div>
 
       </div>
-      <div className="grid container mx-auto p-4 grid-cols-4 ">
+      {/* <div className="grid container mx-auto p-4 grid-cols-4 ">
       
        
       {state?.data?.map((movie) => (
@@ -62,7 +70,7 @@ const Home = () => {
         date={movie.release_date}
         img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
       ))}
-    </div>
+    </div> */}
     </div>
   );
 }

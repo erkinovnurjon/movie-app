@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import TrendingCard from "./TrendingCrad";
 
-import "./card.css" ;
 
-const Trending = () => {
+import "../PopularCard/card.css" ;
+import TrendingCard from "../PopularCard/TrendingCrad";
+
+const TvCard = () => {
   const [dayTrend, setDayTrend] = useState([]);
   const [weekTrend, setWeekTrend] = useState([]);
   const [isDayTrend, setIsDayTrend] = useState(true);
 
   useEffect(() => {
     axios
-      .get("https://api.themoviedb.org/3/trending/all/day", {
+      .get("https://api.themoviedb.org/3/movie/upcoming", {
         params: {
           api_key: "c52aac538904a08747df5e8da7018b07",
         },
@@ -23,7 +24,7 @@ const Trending = () => {
       });
 
     axios
-      .get("https://api.themoviedb.org/3/trending/all/week", {
+      .get("https://api.themoviedb.org/3/discover/tv", {
         params: {
           api_key: "c52aac538904a08747df5e8da7018b07",
         },
@@ -44,19 +45,19 @@ const Trending = () => {
     <div>
       <div className="flex flex-row items-center gap-5 container mx-auto px-8 p-4 mt-10 ">
       <div className="ml-12">
-        <h2 className="text-4xl font-semibold mb-4">Trending</h2>
+        <h2 className="text-4xl font-semibold mb-4 text-blue-900">What a popular</h2>
         
       </div>
            <div className="buttons flex gap-2 rounded-3xl shadow-2xl">
              <button
-             className={`p-3 text-blue-900 rounded-3xl ${
+             className={`p-3  text-blue-900 rounded-3xl ${
                 isDayTrend
                  ? "bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white"
                  : "bg-blue-300 hover:bg-blue-400 active:bg-blue-500"
            }`}
             onClick={() => setIsDayTrend(true)}
        >
-        Week Trending
+        Popular Movies
        </button>
         <button
          className={`p-3 text-blue-900 rounded-3xl ${
@@ -66,7 +67,7 @@ const Trending = () => {
     }`}
     onClick={() => setIsDayTrend(false)}
   >
-    Day Trending
+    Tv Shows
   </button>
 </div>
 
@@ -81,5 +82,4 @@ const Trending = () => {
   );
 };
 
-export default Trending;
-
+export default TvCard;
