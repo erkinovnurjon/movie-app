@@ -39,19 +39,32 @@ const Trending = () => {
     setIsDayTrend(!isDayTrend);
   };
 
+  
   return (
-       <div className="trending-container flex flex-row items-center">
+    <div>
+      <div className="flex flex-row items-center gap-5">
       <h2 className="text-2xl font-semibold mb-4">Trending</h2>
+      <div>
+        <button
+        className="py-2 px-4 text-white rounded bg-blue-500 hover:bg-blue-600"
+        onClick={handleToggleTrend}
+      >
+        {isDayTrend ? "Week Trending" : "Day Trending"}
+      </button>
       <button
         className="py-2 px-4 text-white rounded bg-blue-500 hover:bg-blue-600"
         onClick={handleToggleTrend}
       >
         {isDayTrend ? "Week Trending" : "Day Trending"}
       </button>
-      <div className="trending-cards w-full max-h-[350px] overflow-x-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-9">
+      </div>
+      
+    </div>
+    <div className="trending-cards w-full  gap-4 mt-9 container overflow-auto">
         <TrendingCard data={isDayTrend ? dayTrend : weekTrend} />
       </div>
     </div>
+       
   );
 };
 
