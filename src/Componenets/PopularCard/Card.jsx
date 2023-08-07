@@ -48,7 +48,7 @@ const Trending = () => {
       >
         {isDayTrend ? "Week Trending" : "Day Trending"}
       </button>
-      <div className="trending-cards w-full max-h-[350px] overflow-y-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-9">
+      <div className="trending-cards w-full max-h-[350px] overflow-x-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-9">
         <TrendingCard data={isDayTrend ? dayTrend : weekTrend} />
       </div>
     </div>

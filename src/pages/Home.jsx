@@ -41,14 +41,14 @@ const Home = () => {
   
   return (
     <div className="container">
-      <div className=" container mx-auto p-4 px-8 w-full h-96 bg-slate-400">
+      {/* <div className=" container mx-auto p-4 px-8 w-full h-96 bg-slate-400">
         <div>
           <Card />
           
         </div>
 
-      </div>
-      {/* <div className="grid container mx-auto p-4 grid-cols-4 ">
+      </div> */}
+      <div className="grid container mx-auto p-4 grid-cols-4 ">
       
        
       {state?.data?.map((movie) => (
@@ -58,7 +58,7 @@ const Home = () => {
         date={movie.release_date}
         img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
       ))}
-    </div> */}
+    </div>
     </div>
   );
 }
