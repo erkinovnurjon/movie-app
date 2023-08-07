@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Movie, SingleMovie, Home, Tv } from "./pages"; // SingleTrending import qilishni unutmang
 import Header from "./Componenets/MovieCard/Header";
 import SearchMovie from "./Componenets/MovieCard/SearchMovie";
-import Footer from "./Componenets/MovieCard/Footer";
 import People from "./pages/People";
 import SinglePerson from "./pages/SinglePerson";
 import SingleTrending from "./Componenets/PopularCard/SingleTrending";
@@ -21,9 +20,9 @@ function App() {
           <Route exact path="/single-person/:id" element={<SinglePerson />} />
           <Route exact path="/people/:id" element={<People />} />
           <Route exact path="/search/:id" element={<SearchMovie />} />
-          <Route exact path="/trending/:id" element={<SingleTrending />} /> {/* SingleTrending komponentini qo'shamiz */}
+          <Route exact path="/single-trending/:id" element={<SingleTrending />} /> {/* SingleTrending komponentini qo'shamiz */}
         </Routes>
-        <Footer />
+        
       </Router>
     </>
   );

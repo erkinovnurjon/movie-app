@@ -4,6 +4,7 @@ import axios from "axios";
 
 import "./page.css"
 import MovieCard from "../Componenets/MovieCard/MovieCard";
+import Footer from "../Componenets/MovieCard/Footer";
 
 const Movie = () => {
   const [state, setState] = useState({
@@ -38,7 +39,8 @@ const Movie = () => {
 
   
   return (
-    <div className="grid container mx-auto p-4 grid-cols-4 ">
+   <div>
+     <div className="grid container mx-auto p-4 grid-cols-4 ">
       {state?.data?.map((movie) => (
        
         <MovieCard id={movie.id} key={movie.id} title={movie.title} rating={movie.vote_average}
@@ -46,6 +48,8 @@ const Movie = () => {
         img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
       ))}
     </div>
+    <Footer/>
+   </div>
   );
 }
 

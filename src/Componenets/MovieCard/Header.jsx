@@ -8,6 +8,9 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!handleSubmit || handleSubmit.length === 0) {
+    return <div>Loading...</div>; 
+  }
     
     console.log(change);
     navigate(`/search/${change}`);

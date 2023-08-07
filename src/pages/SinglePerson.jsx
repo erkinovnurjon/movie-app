@@ -62,7 +62,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { useParams } from "react-router-dom";
-import SinglePersonCard from "../Componenets/PopularCard/SinglePersonCard";
+import SinglePersonCard from "../Componenets/PeopleCard/SinglePersonCard";
 import { data } from "autoprefixer";
 
 const SinglePerson = () => {

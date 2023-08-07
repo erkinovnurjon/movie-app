@@ -36,9 +36,7 @@ const TvCard = () => {
       });
   }, []);
 
-  const handleToggleTrend = () => {
-    setIsDayTrend(!isDayTrend);
-  };
+ 
 
   
   return (

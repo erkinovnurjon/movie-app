@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 const TrendingCard = ({ data ,id }) => {
   if (!data || data.length === 0) {
-    return <div>Loading...</div>; // "data" bo'sh yoki uzunligi 0 bo'lsa "Loading..." chiqarib beramiz
+    return <div>Loading...</div>; 
   }console.log(data);
 
   return (
     <Link to={`/single-movie/${id}`}>
         <div className="cards  flex  gap-4">
-      {data.map((item) => (
-        <div className="card" key={item.id}>
-          <img
+              {data.map((item) => (
+               <div className="card" key={item.id}>
+           <img
             src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}
             alt={item.title || item.name}
             className="w-full h-auto rounded-lg mb-2"

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import PeopleCard from "../Componenets/PeopleCard/PeopleCard";
 import { data } from "autoprefixer";
+import Footer from "../Componenets/MovieCard/Footer";
 
 
 
@@ -26,7 +27,8 @@ const Popular = () => {
   console.log(data);
 
   return (
-    <div className="container mx-auto p-4 px-8">
+    <div>
+      <div className="container mx-auto p-4 px-8">
       <h1 className=" text-center font-medium text-3xl  text-blue-900">Popular People</h1>
       
       <div className="grid grid-cols-4 gap-4">
@@ -41,6 +43,8 @@ const Popular = () => {
           />
         ))}
       </div>
+    </div>
+    <Footer />
     </div>
   );
 };

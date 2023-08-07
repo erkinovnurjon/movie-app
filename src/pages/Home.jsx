@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import MovieCard from "../Componenets/MovieCard/MovieCard";
+
 
 import "./page.css"
 
@@ -8,6 +8,7 @@ import Card from "../Componenets/PopularCard/Card";
 import HomeCard from "../Componenets/HomeCard/HomeCard";
 import TvCard from "../Componenets/TvCard/TvCard";
 import RatedCard from "../Componenets/TopRatedCard/RatedCard";
+import Footer from "../Componenets/MovieCard/Footer";
 
 
 const Home = () => {
@@ -49,28 +50,18 @@ const Home = () => {
           <HomeCard />
         </div>
         <div>
-          <RatedCard />
-        </div>
-        <div>
           <Card />
           
         </div>
         <div>
           <TvCard />
         </div>
+        <div>
+          <RatedCard />
+        </div>
 
       </div>
-      {/* <div className="grid container mx-auto p-4 grid-cols-4 ">
-      
-       
-      {state?.data?.map((movie) => (
-        
-       
-        <MovieCard id={movie.id} key={movie.id} title={movie.title} rating={movie.vote_average}
-        date={movie.release_date}
-        img={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} />
-      ))}
-    </div> */}
+        <Footer />
     </div>
   );
 }

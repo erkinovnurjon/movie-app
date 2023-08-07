@@ -36,9 +36,9 @@ const RatedCard = () => {
       });
   }, []);
 
-  const handleToggleTrend = () => {
-    setIsDayTrend(!isDayTrend);
-  };
+//   const handleToggleTrend = () => {
+//     setIsDayTrend(!isDayTrend);
+//   };
 
   
   return (
