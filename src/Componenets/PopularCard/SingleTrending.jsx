@@ -1,56 +1,41 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import SingleTrendCard from "./SingleTrendCard";
+import { Link, useParams } from "react-router-dom";
 
-const SingleTrending = () => {
-  const [dayTrend, setDayTrend] = useState([]);
-  const [weekTrend, setWeekTrend] = useState([]);
-  const [isDayTrend, setIsDayTrend] = useState(true);
+const SingleTrendCard = () => {
+  const {id} = useParams()
 
-  useEffect(() => {
+  const [movies, setMovies] =useState()
+  useEffect(()=>{
     axios
-      .get("https://api.themoviedb.org/3/trending/all/day", {
+      .get(`https://api.themoviedb.org/3/movie/${id}`, {
         params: {
           api_key: "c52aac538904a08747df5e8da7018b07",
         },
       })
-      .then((res) => res.data)
-      .then((data) => setDayTrend(data.results))
-      .catch((err) => {
-        console.error("Error fetching day trending data:", err);
-      });
-
-    axios
-      .get("https://api.themoviedb.org/3/trending/all/week", {
-        params: {
-          api_key: "c52aac538904a08747df5e8da7018b07",
-        },
+      .then((res) => res)
+      .then((data) => {
+        console.log(data);
+        setMovies(data.data);
+        
       })
-      .then((res) => res.data)
-      .then((data) => setWeekTrend(data.results))
       .catch((err) => {
-        console.error("Error fetching week trending data:", err);
+        console.log(err.message);
       });
-  }, []);
-
+  },[])
   return (
     <>
-      <div className="container mx-auto px-8 p-4">
-        {isDayTrend
-          ? dayTrend.map((movie) => (
-              <Link to={`/movies/${movie.id}`} key={movie.id}>
-                <SingleTrendCard data={movie} />
-              </Link>
-            ))
-          : weekTrend.map((movie) => (
-              <Link to={`/movies/${movie.id}`} key={movie.id}>
-                <SingleTrendCard data={movie} />
-              </Link>
-            ))}
+      <div>
+        <Link to={`/single-trending/${id}`}>
+          <div key={id}>
+            <h1>Movie Name: {movies.title}</h1>
+            <h1>Date: {movies.release_date}</h1>
+            <img src={`https://www.themoviedb.org/t/p/w500/${data.backdrop_path}`} alt="" />
+          </div>
+        </Link>
       </div>
     </>
   );
 };
 
-export default SingleTrending;
+export default SingleTrendCard;

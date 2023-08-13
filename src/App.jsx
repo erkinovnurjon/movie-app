@@ -20,9 +20,8 @@ function App() {
           <Route exact path="/single-person/:id" element={<SinglePerson />} />
           <Route exact path="/people/:id" element={<People />} />
           <Route exact path="/search/:id" element={<SearchMovie />} />
-          <Route exact path="/single-trending/:id" element={<SingleTrending />} /> {/* SingleTrending komponentini qo'shamiz */}
+          <Route exact path="/single-movie/:id" element={<SingleTrending />} /> 
         </Routes>
-        
       </Router>
     </>
   );

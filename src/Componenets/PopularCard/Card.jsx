@@ -74,7 +74,7 @@ const Trending = () => {
       
     </div>
     <div className="trending-cards w-full  gap-4 mt-9 container overflow-auto">
-        <TrendingCard data={isDayTrend ? dayTrend : weekTrend} />
+        <TrendingCard data={ dayTrend } />
       </div>
     </div>
        

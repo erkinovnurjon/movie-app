@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const TrendingCard = ({ data ,id }) => {
+  
   if (!data || data.length === 0) {
     return <div>Loading...</div>; 
   }console.log(data);
@@ -30,6 +31,7 @@ const TrendingCard = ({ data ,id }) => {
 };
 
 export default TrendingCard;
+
 
 
 
